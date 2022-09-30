@@ -6,37 +6,34 @@
 <h2>Getting input</h2>
 
 <form>
-    <label for="form1_age">Enter the Secret musician name</label>
-    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="John Lennon"> <br>
+    <label for="form1_age">What is your age </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
 
-    <label for="form1_nick">Guess the musician </label>
+    <label for="form1_nick">What is your nickname </label>
     <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the Guess">
+    <input type="button" onclick="resolveForm()" value="Get values from form">
 </form>
 
 
 <p id="result">This text will be replaced </p>
 
 <script> 
-correct=0
-wrong=0
-function checkGuess (){
+
+function resolveForm (){
     console.log("Getting form values")
     age = document.getElementById("form1_age").value
     nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
     out = document.getElementById("result")
-    if(age==nick){
-        correct=correct+1
-        alert("you got it right")
-        out.innerHTML = "count of correct"+correct+"count of wrong"+wrong
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
     } else {
-        wrong=wrong+1
-        alert("Wrong Musician")
-        out.innerHTML = "count of Correct"+correct+"count of wrong"+wrong
+        out.innerHTML = "Values were not confirmed"
     }
 }
 </script>
 
 </body>
-</html> 
+</html>
