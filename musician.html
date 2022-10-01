@@ -38,5 +38,26 @@
         }
     }
     </script>
+    <div class="container">
+        <img src="Megaloptera.jpg" class="onclick" value="swapImage()" id="Image" width="100px" height="100px " alt="insect" >
+        <p id="result">This text will be replace</p>
+        </div>
+        <script>
+            var useImage= 1
+            function swapImage(){
+                switch(useImage){
+                    case 1: 
+                    document.getElementById("Image").src="Megaloptera.jpg";
+                    useImage = useImage + 1
+                    break
+                    case 2:
+                    document.getElementById("Image").src="Diptera.jpg";
+                    useImage=useImage+1
+                    break
+                    case 3:
+                    document.getElementById("Image").src="Horntail.jpg";
+                }
+            }
+        </script>
 </body>
 </html> 
