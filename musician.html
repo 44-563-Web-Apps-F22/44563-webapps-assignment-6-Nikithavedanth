@@ -17,7 +17,7 @@
     </form>
     
     
-    <p id="result">This text will be replaced </p>
+    <p id="result">This text will show count  of correct and count of wrong </p>
     
     <script> 
     correct=0
@@ -38,26 +38,26 @@
         }
     }
     </script>
-    <div class="container">
-        <img src="Megaloptera.jpg" class="onclick" value="swapImage()" id="Image" width="100px" height="100px " alt="insect" >
-        <p id="result">This text will be replace</p>
+    <div class="container" style="padding:100px 100px">
+        <img src="Megaloptera.jpg" class="img-fluid" onclick="swapImage()" id="Image" width="100px" height="100px " alt="insect" >
+        <p id="result">This image will be replaced</p>
         </div>
         <script>
             var useImage= 1
             function swapImage(){
                 switch(useImage){
                     case 1: 
-                    document.getElementById("Image").src="Megaloptera.jpg";
-                    useImage =  1
-                    break
+                    document.getElementById("Image").src="Horntail.jpg";
+                    useImage =  2;
+                    break;
                     case 2:
                     document.getElementById("Image").src="Diptera.jpg";
-                    useImage=2
-                    break
+                    useImage=3;
+                    break;
                     case 3:
-                    document.getElementById("Image").src="Horntail.jpg";
-                    useImage=3
-                    break
+                    document.getElementById("Image").src="Megaloptera.jpg";
+                    useImage=1;
+                    break;
                 }
             }
         </script>
