@@ -26,19 +26,9 @@
         <div class="form-group">
         <input type="button" class="btn btn-warning" value="Select a vacation" onclick="selectVacation()">
     </div>
-    <p id="result">A vacation is selected</p>
     </form>
     <br>
-    <form>
-        <label for="city">Enter a city</label>
-        <input type="text" id="city" name="propertyname" value="city"> <br>
-        
-        <label for="price">Enter price</label>
-        <input type="text" id="price" name="vacationprice"> <br>
     
-        <input type="button" class="btn btn-success" value="Update the vacation" onclick="updateVacation()">
-    </form> 
-    <p id="result">vacation is updated</p>
     <script>
         var my_vacation={};
         function selectVacation(){
@@ -75,6 +65,16 @@
     document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
 }
     </script>
+    <form>
+        <label for="city">Enter a city</label>
+        <input type="text" id="city" name="propertyname" value="city"> <br>
+        
+        <label for="price">Enter price</label>
+        <input type="text" id="price" name="vacationprice"> <br>
+    
+        <input type="button" class="btn btn-success" value="Update the vacation" onclick="updateVacation()">
+        <p id="result">A vacation is selected and also updated</p>
+    </form> 
 <script>
     function updateVacation()
 {
@@ -85,6 +85,7 @@
 
     document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
 }
+
    </script>
 </body>
 </html>
