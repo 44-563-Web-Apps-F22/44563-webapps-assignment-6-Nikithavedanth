@@ -13,10 +13,10 @@
 <body>
     <h1>Musician guess by Nikitha Vedant Madabhushi</h1>
     <form>
-        <label for="form1_age">Enter the Secret musician name</label>
+        <label for="form1_password">Enter the Secret musician name</label>
         <input type ="password" id="password" name="password" min=10 max=50 step=2 value="John Lennon"> <br>
     
-        <label for="form1_nick">Guess the musician </label>
+        <label for="form1_guess">Guess the musician </label>
         <input type ="text" id="guess" name="guess" autofocus> <br>
     
         <input type="button" onclick="checkGuess()" value="Check the Guess">
@@ -68,42 +68,34 @@
             }
         </script>
         <script>
-        let n=0;
+        let y=0;
         const wrongguess =[];
         function endoftheGame()
         {
             pwd=document.getElementById("password").value
             guessing=document.getElementById("guess").value
-            if(pwd==guessing)
-            {
-                
-                correct++
-                alert("You got it right")
-                document.getElementById("result").innerHTML="Correct count:"+correct+" "+"Wrong count:"+wrong
-                n=n+1;
-            }
-            else
-            {
-                
-                
-                    wrong++;
-                    wrongguess[n]=1;
-                    n++;
-                    alert("Wrong Musician")
-                    document.getElementById("result").innerHTML="Correct count:"+correct+" "+"Wrong count:"+wrong
-                    
-                   if(n>=3)
-                   {
-                    for(let y=0;y<wrongguess.length;y++)
-                    {
-                    if(wrongguess[y]== 1 && wrongguess[y+1]==1 && wrongguess[y+2]==1)
-                    {
-                        alert("Sorry, game over.")
-                    }
-                    }
-                    }
+            if (pwd == guessing) {
+                if (wrong >= 3) {
+                    alert("Sorry, game over.")
+                }
+                else {
+                    correct++
+                    alert("You got it right")
+                    document.getElementById("result").innerHTML = "Correct count:" + correct + " " + "Wrong count:" + wrong
                 }
             }
+            else {
+                if (wrong >= 3) {
+                    alert("Sorry, game over.")
+                }
+                else {
+                    wrong++
+                    alert("Wrong Musician")
+                    document.getElementById("result").innerHTML = "Correct count:" + correct + " " + "Wrong count:" + wrong
+                }
+
+            }
+        }
         </script>
     </body>
 </html>
